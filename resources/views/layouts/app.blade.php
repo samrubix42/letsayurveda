@@ -275,10 +275,20 @@
         </div>
     </div>
 
-    <!-- Floating Vaidya (Doctor) Consultation Icon -->
-    <a href="#consultation" class="fixed bottom-6 right-6 z-40 bg-secondary hover:bg-secondary/90 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg active:scale-95 transition-all duration-300 group hover:shadow-xl animate-bounce" title="Consult a Vaidya">
-        <span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">health_and_safety</span>
-        <span class="absolute right-16 bg-primary text-white text-[10px] font-label-caps tracking-widest px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap shadow-md">ASK A VAIDYA</span>
+    <!-- Floating Vaidya (Doctor) Consultation Badge -->
+    <a href="#consultation" class="fixed bottom-6 right-6 z-40 flex items-center gap-3 bg-white border border-outline-variant/30 text-primary pl-3 pr-5 py-2.5 rounded-full shadow-2xl hover:shadow-emerald-900/10 active:scale-95 transition-all duration-300 group hover:bg-surface-container-low" title="Consult a Vaidya">
+        <div class="relative">
+            <!-- Doctor Avatar Image -->
+            <div class="w-10 h-10 rounded-full overflow-hidden bg-primary-container flex items-center justify-center border border-secondary/20 shadow-inner">
+                <img src="/doctor-avatar.png" alt="Vaidya Online" class="w-full h-full object-cover">
+            </div>
+            <!-- Online Pulsing Badge -->
+            <span class="absolute bottom-0 right-0 block h-2.5 w-2.5 rounded-full ring-2 ring-white bg-emerald-500 animate-pulse"></span>
+        </div>
+        <div class="flex flex-col text-left">
+            <span class="text-[9px] font-label-caps text-secondary font-bold tracking-widest leading-none">ONLINE VAIDYA</span>
+            <span class="text-xs font-bold text-primary leading-tight mt-0.5 group-hover:text-secondary transition-colors">Consult Doctor</span>
+        </div>
     </a>
 </body>
 </html>

@@ -138,7 +138,7 @@
             
             <!-- Product Card 1 -->
             <div class="bg-surface rounded-2xl overflow-hidden shadow-sm border border-outline-variant/20 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col group">
-                <div @click="selectedProduct = { name: 'Radiance Face Oil', price: '$85', desc: 'A potent infusion of saffron and sandalwood for a deep, luminous glow.', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB6LGVZvguHodxq33XQpp6aprDmaYZIoJhGCW77y3u82NlVzT2OrB-tfSl0gz5tXOWx7HTmV-DeMtH39rg06Ni_pflBP9Ey_auZ_4S26YWii6J-7O_g4L0gN37kcw6ZKQcbyVP1QaNUY5ECi9hQ09P3T9LlyRrgQURU1bR41x4PYhY-lp1nnjki3tDsdhkjGSqsNtpP7PKiB7ohJlzIAJ7MuOrBotv7dOFjByzkWGGxKdTl_qvvxhtmn95OjnbOpk00oA0qz5EFbkzH' }; quickViewOpen = true" class="relative aspect-[4/5] overflow-hidden cursor-pointer">
+                <div @click="selectedProduct = { name: 'Radiance Face Oil', price: '₹1,850', desc: 'A potent infusion of saffron and sandalwood for a deep, luminous glow.', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB6LGVZvguHodxq33XQpp6aprDmaYZIoJhGCW77y3u82NlVzT2OrB-tfSl0gz5tXOWx7HTmV-DeMtH39rg06Ni_pflBP9Ey_auZ_4S26YWii6J-7O_g4L0gN37kcw6ZKQcbyVP1QaNUY5ECi9hQ09P3T9LlyRrgQURU1bR41x4PYhY-lp1nnjki3tDsdhkjGSqsNtpP7PKiB7ohJlzIAJ7MuOrBotv7dOFjByzkWGGxKdTl_qvvxhtmn95OjnbOpk00oA0qz5EFbkzH' }; quickViewOpen = true" class="relative aspect-[4/5] overflow-hidden cursor-pointer">
                     <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6LGVZvguHodxq33XQpp6aprDmaYZIoJhGCW77y3u82NlVzT2OrB-tfSl0gz5tXOWx7HTmV-DeMtH39rg06Ni_pflBP9Ey_auZ_4S26YWii6J-7O_g4L0gN37kcw6ZKQcbyVP1QaNUY5ECi9hQ09P3T9LlyRrgQURU1bR41x4PYhY-lp1nnjki3tDsdhkjGSqsNtpP7PKiB7ohJlzIAJ7MuOrBotv7dOFjByzkWGGxKdTl_qvvxhtmn95OjnbOpk00oA0qz5EFbkzH" alt="Radiance Face Oil"/>
                     <div class="absolute top-4 left-4 bg-secondary-container/90 text-on-secondary-container px-3 py-1 rounded-full text-[10px] font-label-caps font-bold">KUMKUMADI CORES</div>
                 </div>
@@ -151,14 +151,14 @@
                         <span class="material-symbols-outlined text-sm text-secondary fill-icon">star</span>
                         <span class="text-xs text-on-surface-variant ml-1">(48)</span>
                     </div>
-                    <h4 class="font-headline-sm text-lg text-primary font-bold mb-2 cursor-pointer hover:text-secondary transition-colors" @click="selectedProduct = { name: 'Radiance Face Oil', price: '$85', desc: 'A potent infusion of saffron and sandalwood for a deep, luminous glow.', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB6LGVZvguHodxq33XQpp6aprDmaYZIoJhGCW77y3u82NlVzT2OrB-tfSl0gz5tXOWx7HTmV-DeMtH39rg06Ni_pflBP9Ey_auZ_4S26YWii6J-7O_g4L0gN37kcw6ZKQcbyVP1QaNUY5ECi9hQ09P3T9LlyRrgQURU1bR41x4PYhY-lp1nnjki3tDsdhkjGSqsNtpP7PKiB7ohJlzIAJ7MuOrBotv7dOFjByzkWGGxKdTl_qvvxhtmn95OjnbOpk00oA0qz5EFbkzH' }; quickViewOpen = true">
+                    <h4 class="font-headline-sm text-lg text-primary font-bold mb-2 cursor-pointer hover:text-secondary transition-colors" @click="selectedProduct = { name: 'Radiance Face Oil', price: '₹1,850', desc: 'A potent infusion of saffron and sandalwood for a deep, luminous glow.', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB6LGVZvguHodxq33XQpp6aprDmaYZIoJhGCW77y3u82NlVzT2OrB-tfSl0gz5tXOWx7HTmV-DeMtH39rg06Ni_pflBP9Ey_auZ_4S26YWii6J-7O_g4L0gN37kcw6ZKQcbyVP1QaNUY5ECi9hQ09P3T9LlyRrgQURU1bR41x4PYhY-lp1nnjki3tDsdhkjGSqsNtpP7PKiB7ohJlzIAJ7MuOrBotv7dOFjByzkWGGxKdTl_qvvxhtmn95OjnbOpk00oA0qz5EFbkzH' }; quickViewOpen = true">
                         Radiance Face Oil
                     </h4>
                     <p class="text-sm text-on-surface-variant leading-relaxed mb-4 flex-grow">
                         A traditional saffron formulation designed to smooth fine lines and illuminate dry skin types.
                     </p>
                     <div class="flex items-center justify-between mt-auto">
-                        <span class="font-headline-sm text-lg text-secondary font-bold">$85</span>
+                        <span class="font-headline-sm text-lg text-secondary font-bold">₹1,850</span>
                         <button @click="cartOpen = true" class="bg-primary text-white p-3 rounded-full hover:bg-secondary hover:shadow-md transition-all active:scale-90 flex items-center justify-center cursor-pointer">
                             <span class="material-symbols-outlined text-base">add_shopping_cart</span>
                         </button>
@@ -168,7 +168,7 @@
             
             <!-- Product Card 2 -->
             <div class="bg-surface rounded-2xl overflow-hidden shadow-sm border border-outline-variant/20 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col group">
-                <div @click="selectedProduct = { name: 'Vata Balancing Balm', price: '$42', desc: 'Deeply nourishing shea and brahmi to ground the senses and calm the mind.', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDfqLG_7gf5UL65-70XieBWo9Rd-OfCN2rJvIHCudAdGI4daN-pJhQUYL0upCaoNi2A4hIL8Hdspu9f6BFMKIC4oJXFKCiijR-Sv8gPA9PRkSjfftscRHt1-Tlwjm9CZ5-noeijSy0Nc7ISio2V0g1dEqEfylXvcrdjbp1zWnkmC27FpIfje2GvxnoCd8omaNMjm9R2i5SrvwSdntTX3qV-LhKH5KQISt-33qRMdU-TPkaWI8uAZh73hR3Eyp-6UfbfZBej06gmQkP7' }; quickViewOpen = true" class="relative aspect-[4/5] overflow-hidden cursor-pointer">
+                <div @click="selectedProduct = { name: 'Vata Balancing Balm', price: '₹690', desc: 'Deeply nourishing shea and brahmi to ground the senses and calm the mind.', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDfqLG_7gf5UL65-70XieBWo9Rd-OfCN2rJvIHCudAdGI4daN-pJhQUYL0upCaoNi2A4hIL8Hdspu9f6BFMKIC4oJXFKCiijR-Sv8gPA9PRkSjfftscRHt1-Tlwjm9CZ5-noeijSy0Nc7ISio2V0g1dEqEfylXvcrdjbp1zWnkmC27FpIfje2GvxnoCd8omaNMjm9R2i5SrvwSdntTX3qV-LhKH5KQISt-33qRMdU-TPkaWI8uAZh73hR3Eyp-6UfbfZBej06gmQkP7' }; quickViewOpen = true" class="relative aspect-[4/5] overflow-hidden cursor-pointer">
                     <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfqLG_7gf5UL65-70XieBWo9Rd-OfCN2rJvIHCudAdGI4daN-pJhQUYL0upCaoNi2A4hIL8Hdspu9f6BFMKIC4oJXFKCiijR-Sv8gPA9PRkSjfftscRHt1-Tlwjm9CZ5-noeijSy0Nc7ISio2V0g1dEqEfylXvcrdjbp1zWnkmC27FpIfje2GvxnoCd8omaNMjm9R2i5SrvwSdntTX3qV-LhKH5KQISt-33qRMdU-TPkaWI8uAZh73hR3Eyp-6UfbfZBej06gmQkP7" alt="Vata Balancing Balm"/>
                     <div class="absolute top-4 left-4 bg-secondary-container/90 text-on-secondary-container px-3 py-1 rounded-full text-[10px] font-label-caps font-bold">SOOTHING BALMS</div>
                 </div>
@@ -181,14 +181,14 @@
                         <span class="material-symbols-outlined text-sm text-secondary fill-icon">star</span>
                         <span class="text-xs text-on-surface-variant ml-1">(32)</span>
                     </div>
-                    <h4 class="font-headline-sm text-lg text-primary font-bold mb-2 cursor-pointer hover:text-secondary transition-colors" @click="selectedProduct = { name: 'Vata Balancing Balm', price: '$42', desc: 'Deeply nourishing shea and brahmi to ground the senses and calm the mind.', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDfqLG_7gf5UL65-70XieBWo9Rd-OfCN2rJvIHCudAdGI4daN-pJhQUYL0upCaoNi2A4hIL8Hdspu9f6BFMKIC4oJXFKCiijR-Sv8gPA9PRkSjfftscRHt1-Tlwjm9CZ5-noeijSy0Nc7ISio2V0g1dEqEfylXvcrdjbp1zWnkmC27FpIfje2GvxnoCd8omaNMjm9R2i5SrvwSdntTX3qV-LhKH5KQISt-33qRMdU-TPkaWI8uAZh73hR3Eyp-6UfbfZBej06gmQkP7' }; quickViewOpen = true">
+                    <h4 class="font-headline-sm text-lg text-primary font-bold mb-2 cursor-pointer hover:text-secondary transition-colors" @click="selectedProduct = { name: 'Vata Balancing Balm', price: '₹690', desc: 'Deeply nourishing shea and brahmi to ground the senses and calm the mind.', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDfqLG_7gf5UL65-70XieBWo9Rd-OfCN2rJvIHCudAdGI4daN-pJhQUYL0upCaoNi2A4hIL8Hdspu9f6BFMKIC4oJXFKCiijR-Sv8gPA9PRkSjfftscRHt1-Tlwjm9CZ5-noeijSy0Nc7ISio2V0g1dEqEfylXvcrdjbp1zWnkmC27FpIfje2GvxnoCd8omaNMjm9R2i5SrvwSdntTX3qV-LhKH5KQISt-33qRMdU-TPkaWI8uAZh73hR3Eyp-6UfbfZBej06gmQkP7' }; quickViewOpen = true">
                         Vata Balancing Balm
                     </h4>
                     <p class="text-sm text-on-surface-variant leading-relaxed mb-4 flex-grow">
                         Infused with Ashwagandha and Sesame oil to ground hyperactive energies and soothe rough skin patches.
                     </p>
                     <div class="flex items-center justify-between mt-auto">
-                        <span class="font-headline-sm text-lg text-secondary font-bold">$42</span>
+                        <span class="font-headline-sm text-lg text-secondary font-bold">₹690</span>
                         <button @click="cartOpen = true" class="bg-primary text-white p-3 rounded-full hover:bg-secondary hover:shadow-md transition-all active:scale-90 flex items-center justify-center cursor-pointer">
                             <span class="material-symbols-outlined text-base">add_shopping_cart</span>
                         </button>
@@ -198,7 +198,7 @@
             
             <!-- Product Card 3 -->
             <div class="bg-surface rounded-2xl overflow-hidden shadow-sm border border-outline-variant/20 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col group">
-                <div @click="selectedProduct = { name: 'Silk Hair Nectar', price: '$68', desc: 'A rich infusion of Amla and Coconut milk for restorative shine.', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBtOxP2-m1FzCmgTxTd7tSOHf0Wq404IJ1y9vjOa37tFF7JfoJW9eot7Z0DQJ6CgszYJU4R4d-88J_SkeNs1Ky3379K1q_GjDqlSWeIBssany8KKbtkn0XTjUpBYRZKNcxDZGDoxusQ6bRemu2QZWDQeX9ipcRupA9KLHNLCL6pl1ufCGeQ7X7-xs-bno_vFf4DtO6DY5HgOvOQitDF89faVv90cI4BnbffMTDva4cjpUYPfwJF2OkXM9eTYXIe-_egDB1LeTzWnVm7' }; quickViewOpen = true" class="relative aspect-[4/5] overflow-hidden cursor-pointer">
+                <div @click="selectedProduct = { name: 'Silk Hair Nectar', price: '₹1,450', desc: 'A rich infusion of Amla and Coconut milk for restorative shine.', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBtOxP2-m1FzCmgTxTd7tSOHf0Wq404IJ1y9vjOa37tFF7JfoJW9eot7Z0DQJ6CgszYJU4R4d-88J_SkeNs1Ky3379K1q_GjDqlSWeIBssany8KKbtkn0XTjUpBYRZKNcxDZGDoxusQ6bRemu2QZWDQeX9ipcRupA9KLHNLCL6pl1ufCGeQ7X7-xs-bno_vFf4DtO6DY5HgOvOQitDF89faVv90cI4BnbffMTDva4cjpUYPfwJF2OkXM9eTYXIe-_egDB1LeTzWnVm7' }; quickViewOpen = true" class="relative aspect-[4/5] overflow-hidden cursor-pointer">
                     <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtOxP2-m1FzCmgTxTd7tSOHf0Wq404IJ1y9vjOa37tFF7JfoJW9eot7Z0DQJ6CgszYJU4R4d-88J_SkeNs1Ky3379K1q_GjDqlSWeIBssany8KKbtkn0XTjUpBYRZKNcxDZGDoxusQ6bRemu2QZWDQeX9ipcRupA9KLHNLCL6pl1ufCGeQ7X7-xs-bno_vFf4DtO6DY5HgOvOQitDF89faVv90cI4BnbffMTDva4cjpUYPfwJF2OkXM9eTYXIe-_egDB1LeTzWnVm7" alt="Silk Hair Nectar"/>
                     <div class="absolute top-4 left-4 bg-secondary-container/90 text-on-secondary-container px-3 py-1 rounded-full text-[10px] font-label-caps font-bold">HAIR REJUVENATION</div>
                 </div>
@@ -211,14 +211,104 @@
                         <span class="material-symbols-outlined text-sm text-secondary fill-icon">star</span>
                         <span class="text-xs text-on-surface-variant ml-1">(54)</span>
                     </div>
-                    <h4 class="font-headline-sm text-lg text-primary font-bold mb-2 cursor-pointer hover:text-secondary transition-colors" @click="selectedProduct = { name: 'Silk Hair Nectar', price: '$68', desc: 'A rich infusion of Amla and Coconut milk for restorative shine.', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBtOxP2-m1FzCmgTxTd7tSOHf0Wq404IJ1y9vjOa37tFF7JfoJW9eot7Z0DQJ6CgszYJU4R4d-88J_SkeNs1Ky3379K1q_GjDqlSWeIBssany8KKbtkn0XTjUpBYRZKNcxDZGDoxusQ6bRemu2QZWDQeX9ipcRupA9KLHNLCL6pl1ufCGeQ7X7-xs-bno_vFf4DtO6DY5HgOvOQitDF89faVv90cI4BnbffMTDva4cjpUYPfwJF2OkXM9eTYXIe-_egDB1LeTzWnVm7' }; quickViewOpen = true">
+                    <h4 class="font-headline-sm text-lg text-primary font-bold mb-2 cursor-pointer hover:text-secondary transition-colors" @click="selectedProduct = { name: 'Silk Hair Nectar', price: '₹1,450', desc: 'A rich infusion of Amla and Coconut milk for restorative shine.', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBtOxP2-m1FzCmgTxTd7tSOHf0Wq404IJ1y9vjOa37tFF7JfoJW9eot7Z0DQJ6CgszYJU4R4d-88J_SkeNs1Ky3379K1q_GjDqlSWeIBssany8KKbtkn0XTjUpBYRZKNcxDZGDoxusQ6bRemu2QZWDQeX9ipcRupA9KLHNLCL6pl1ufCGeQ7X7-xs-bno_vFf4DtO6DY5HgOvOQitDF89faVv90cI4BnbffMTDva4cjpUYPfwJF2OkXM9eTYXIe-_egDB1LeTzWnVm7' }; quickViewOpen = true">
                         Silk Hair Nectar
                     </h4>
                     <p class="text-sm text-on-surface-variant leading-relaxed mb-4 flex-grow">
                         Restores vitality to dry roots and brittle ends with cold-pressed Amla berries and clarifying Neem extracts.
                     </p>
                     <div class="flex items-center justify-between mt-auto">
-                        <span class="font-headline-sm text-lg text-secondary font-bold">$68</span>
+                        <span class="font-headline-sm text-lg text-secondary font-bold">₹1,450</span>
+                        <button @click="cartOpen = true" class="bg-primary text-white p-3 rounded-full hover:bg-secondary hover:shadow-md transition-all active:scale-90 flex items-center justify-center cursor-pointer">
+                            <span class="material-symbols-outlined text-base">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 4: Kumkumadi Rejuvenating Serum -->
+            <div class="bg-surface rounded-2xl overflow-hidden shadow-sm border border-outline-variant/20 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col group">
+                <div @click="selectedProduct = { name: 'Kumkumadi Rejuvenating Serum', price: '₹1,249', desc: 'Traditional night serum that restores youthful glow and repairs skin cells overnight.', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB2KqtdvrIlGaTzFICQA6FU-rEPz4ax6MdnCZ5uk9rR-EnrvPxJXvFkt6oF_JPl7NaB5HcIE3o4vCV_j_zp_hcktPaeGQVLTkS0tJdrhlQ5h_Q5AkD2PjIm2BerM7QiNqCz09DBsobBACw7_5UYgXteStK6GV2u8ybzPJE5x2ItjKXuRLNcoOsT-Rkx5KQ2aAqpDGurC8ETEMoLTcPavfyX7_4nS1011De7ivqGRze2MIIDlUVldVKtiyh0J2LLM-M96XNsUcGS_-BL' }; quickViewOpen = true" class="relative aspect-[4/5] overflow-hidden cursor-pointer">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2KqtdvrIlGaTzFICQA6FU-rEPz4ax6MdnCZ5uk9rR-EnrvPxJXvFkt6oF_JPl7NaB5HcIE3o4vCV_j_zp_hcktPaeGQVLTkS0tJdrhlQ5h_Q5AkD2PjIm2BerM7QiNqCz09DBsobBACw7_5UYgXteStK6GV2u8ybzPJE5x2ItjKXuRLNcoOsT-Rkx5KQ2aAqpDGurC8ETEMoLTcPavfyX7_4nS1011De7ivqGRze2MIIDlUVldVKtiyh0J2LLM-M96XNsUcGS_-BL" alt="Kumkumadi Rejuvenating Serum"/>
+                    <div class="absolute top-4 left-4 bg-secondary-container/90 text-on-secondary-container px-3 py-1 rounded-full text-[10px] font-label-caps font-bold">NIGHT REPAIR</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex items-center gap-1 mb-2">
+                        <span class="material-symbols-outlined text-sm text-secondary fill-icon">star</span>
+                        <span class="material-symbols-outlined text-sm text-secondary fill-icon">star</span>
+                        <span class="material-symbols-outlined text-sm text-secondary fill-icon">star</span>
+                        <span class="material-symbols-outlined text-sm text-secondary fill-icon">star</span>
+                        <span class="material-symbols-outlined text-sm text-secondary fill-icon">star</span>
+                        <span class="text-xs text-on-surface-variant ml-1">(27)</span>
+                    </div>
+                    <h4 class="font-headline-sm text-lg text-primary font-bold mb-2 cursor-pointer hover:text-secondary transition-colors" @click="selectedProduct = { name: 'Kumkumadi Rejuvenating Serum', price: '₹1,249', desc: 'Traditional night serum that restores youthful glow and repairs skin cells overnight.', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB2KqtdvrIlGaTzFICQA6FU-rEPz4ax6MdnCZ5uk9rR-EnrvPxJXvFkt6oF_JPl7NaB5HcIE3o4vCV_j_zp_hcktPaeGQVLTkS0tJdrhlQ5h_Q5AkD2PjIm2BerM7QiNqCz09DBsobBACw7_5UYgXteStK6GV2u8ybzPJE5x2ItjKXuRLNcoOsT-Rkx5KQ2aAqpDGurC8ETEMoLTcPavfyX7_4nS1011De7ivqGRze2MIIDlUVldVKtiyh0J2LLM-M96XNsUcGS_-BL' }; quickViewOpen = true">
+                        Kumkumadi Rejuvenating Serum
+                    </h4>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-4 flex-grow">
+                        Traditional night serum that restores youthful glow and repairs skin cells overnight with premium Kashmiri Saffron.
+                    </p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="font-headline-sm text-lg text-secondary font-bold">₹1,249</span>
+                        <button @click="cartOpen = true" class="bg-primary text-white p-3 rounded-full hover:bg-secondary hover:shadow-md transition-all active:scale-90 flex items-center justify-center cursor-pointer">
+                            <span class="material-symbols-outlined text-base">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 5: Tejas Brightening Face Mask -->
+            <div class="bg-surface rounded-2xl overflow-hidden shadow-sm border border-outline-variant/20 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col group">
+                <div @click="selectedProduct = { name: 'Tejas Brightening Face Mask', price: '₹899', desc: 'A cooling herbal clay mask to target active breakouts and instantly brighten tanned skin.', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBAa7m03kwvnRFmELlh7O-eCXCrFDpGx7mndLB8sm-Pyj82hGyJTcbzL8fEahAc_djIO30Lp1wzpc6PF8jA-vMIOZ-yRQJrm24k4GoYppGD9d-ib-N3JTKl-S3jh6I9wVBToEqe9RxN-7gRX3dZoZMCNtHbovBcslwJpb0Cn5z607k70tHpMUdHRicV8_eWhRgP-FAK3Fjy7u5Q9J7wNH977L9ovdHOTDfZ6HtJpy_YmOLpOmJkVYQ2K08ztww5BuO_B0-WSKk9Mt61' }; quickViewOpen = true" class="relative aspect-[4/5] overflow-hidden cursor-pointer">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAa7m03kwvnRFmELlh7O-eCXCrFDpGx7mndLB8sm-Pyj82hGyJTcbzL8fEahAc_djIO30Lp1wzpc6PF8jA-vMIOZ-yRQJrm24k4GoYppGD9d-ib-N3JTKl-S3jh6I9wVBToEqe9RxN-7gRX3dZoZMCNtHbovBcslwJpb0Cn5z607k70tHpMUdHRicV8_eWhRgP-FAK3Fjy7u5Q9J7wNH977L9ovdHOTDfZ6HtJpy_YmOLpOmJkVYQ2K08ztww5BuO_B0-WSKk9Mt61" alt="Tejas Brightening Face Mask"/>
+                    <div class="absolute top-4 left-4 bg-secondary-container/90 text-on-secondary-container px-3 py-1 rounded-full text-[10px] font-label-caps font-bold">DETOX MASK</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex items-center gap-1 mb-2">
+                        <span class="material-symbols-outlined text-sm text-secondary fill-icon">star</span>
+                        <span class="material-symbols-outlined text-sm text-secondary fill-icon">star</span>
+                        <span class="material-symbols-outlined text-sm text-secondary fill-icon">star</span>
+                        <span class="material-symbols-outlined text-sm text-secondary fill-icon">star</span>
+                        <span class="material-symbols-outlined text-sm text-secondary/40">star</span>
+                        <span class="text-xs text-on-surface-variant ml-1">(19)</span>
+                    </div>
+                    <h4 class="font-headline-sm text-lg text-primary font-bold mb-2 cursor-pointer hover:text-secondary transition-colors" @click="selectedProduct = { name: 'Tejas Brightening Face Mask', price: '₹899', desc: 'A cooling herbal clay mask to target active breakouts and instantly brighten tanned skin.', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBAa7m03kwvnRFmELlh7O-eCXCrFDpGx7mndLB8sm-Pyj82hGyJTcbzL8fEahAc_djIO30Lp1wzpc6PF8jA-vMIOZ-yRQJrm24k4GoYppGD9d-ib-N3JTKl-S3jh6I9wVBToEqe9RxN-7gRX3dZoZMCNtHbovBcslwJpb0Cn5z607k70tHpMUdHRicV8_eWhRgP-FAK3Fjy7u5Q9J7wNH977L9ovdHOTDfZ6HtJpy_YmOLpOmJkVYQ2K08ztww5BuO_B0-WSKk9Mt61' }; quickViewOpen = true">
+                        Tejas Brightening Face Mask
+                    </h4>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-4 flex-grow">
+                        A cooling herbal clay mask to target active breakouts, tighten pores, and instantly brighten tanned skin constitutions.
+                    </p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="font-headline-sm text-lg text-secondary font-bold">₹899</span>
+                        <button @click="cartOpen = true" class="bg-primary text-white p-3 rounded-full hover:bg-secondary hover:shadow-md transition-all active:scale-90 flex items-center justify-center cursor-pointer">
+                            <span class="material-symbols-outlined text-base">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 6: Ojas Immunity Booster Elixir -->
+            <div class="bg-surface rounded-2xl overflow-hidden shadow-sm border border-outline-variant/20 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col group">
+                <div @click="selectedProduct = { name: 'Ojas Immunity Booster Elixir', price: '₹650', desc: 'Fortified with Amla, Giloy and pure wild honey to boost daily energy and viral defense.', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCtvuWjBpX4Ud52-YiDxxvj3Oahyowxiapahu3coatkcN6CJxx4gypXqaxVq_CHod-NHB0j6EvUUTymIHZ0SX9iEl3lkBnl53EiQXCL6occYUzi09ivc8wBresNADED8_AJ8zOMaAVVxP6ygeTR2sfiYFBQv-JV7YGseX2hmmQ35u1gbQg2srDDLTJW3RD-TruxNQbCzOR_CCGHwWN_wAuo7kAoRlwBRPaFu_g2xTu92Tso-GscbWOZMNRArBmcCZuyOBA7IzMKuCJe' }; quickViewOpen = true" class="relative aspect-[4/5] overflow-hidden cursor-pointer">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtvuWjBpX4Ud52-YiDxxvj3Oahyowxiapahu3coatkcN6CJxx4gypXqaxVq_CHod-NHB0j6EvUUTymIHZ0SX9iEl3lkBnl53EiQXCL6occYUzi09ivc8wBresNADED8_AJ8zOMaAVVxP6ygeTR2sfiYFBQv-JV7YGseX2hmmQ35u1gbQg2srDDLTJW3RD-TruxNQbCzOR_CCGHwWN_wAuo7kAoRlwBRPaFu_g2xTu92Tso-GscbWOZMNRArBmcCZuyOBA7IzMKuCJe" alt="Ojas Immunity Booster Elixir"/>
+                    <div class="absolute top-4 left-4 bg-secondary-container/90 text-on-secondary-container px-3 py-1 rounded-full text-[10px] font-label-caps font-bold">DAILY WELLNESS</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex items-center gap-1 mb-2">
+                        <span class="material-symbols-outlined text-sm text-secondary fill-icon">star</span>
+                        <span class="material-symbols-outlined text-sm text-secondary fill-icon">star</span>
+                        <span class="material-symbols-outlined text-sm text-secondary fill-icon">star</span>
+                        <span class="material-symbols-outlined text-sm text-secondary fill-icon">star</span>
+                        <span class="material-symbols-outlined text-sm text-secondary fill-icon">star</span>
+                        <span class="text-xs text-on-surface-variant ml-1">(61)</span>
+                    </div>
+                    <h4 class="font-headline-sm text-lg text-primary font-bold mb-2 cursor-pointer hover:text-secondary transition-colors" @click="selectedProduct = { name: 'Ojas Immunity Booster Elixir', price: '₹650', desc: 'Fortified with Amla, Giloy and pure wild honey to boost daily energy and viral defense.', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCtvuWjBpX4Ud52-YiDxxvj3Oahyowxiapahu3coatkcN6CJxx4gypXqaxVq_CHod-NHB0j6EvUUTymIHZ0SX9iEl3lkBnl53EiQXCL6occYUzi09ivc8wBresNADED8_AJ8zOMaAVVxP6ygeTR2sfiYFBQv-JV7YGseX2hmmQ35u1gbQg2srDDLTJW3RD-TruxNQbCzOR_CCGHwWN_wAuo7kAoRlwBRPaFu_g2xTu92Tso-GscbWOZMNRArBmcCZuyOBA7IzMKuCJe' }; quickViewOpen = true">
+                        Ojas Immunity Booster Elixir
+                    </h4>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-4 flex-grow">
+                        Fortified with wild Amla berries, adaptogenic Giloy and pure honey to boost daily energy and viral defense.
+                    </p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="font-headline-sm text-lg text-secondary font-bold">₹650</span>
                         <button @click="cartOpen = true" class="bg-primary text-white p-3 rounded-full hover:bg-secondary hover:shadow-md transition-all active:scale-90 flex items-center justify-center cursor-pointer">
                             <span class="material-symbols-outlined text-base">add_shopping_cart</span>
                         </button>
@@ -408,7 +498,7 @@
                         </select>
                     </div>
                     <button class="w-full bg-secondary hover:bg-secondary/90 text-white font-label-caps text-xs tracking-wider py-4 rounded-full active:scale-95 transition-all mt-4 font-bold cursor-pointer" type="button">
-                        CONFIRM APPOINTMENT ($49)
+                        CONFIRM APPOINTMENT (₹1,500)
                     </button>
                 </form>
             </div>
@@ -486,6 +576,61 @@
                 </div>
             </article>
             
+        </div>
+    </div>
+</section>
+
+<!-- Section: FAQ Accordion -->
+<section id="faq" class="py-16 bg-surface-container-low border-t border-outline-variant/10" x-data="{ activeFaq: null }">
+    <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="font-label-caps text-xs text-secondary font-bold tracking-widest uppercase">KNOWLEDGE BASE</span>
+            <h3 class="font-headline-md text-3xl text-primary font-bold mt-2">Frequently Asked Questions</h3>
+        </div>
+        <div class="max-w-3xl mx-auto space-y-4">
+            <!-- FAQ 1 -->
+            <div class="bg-surface rounded-2xl border border-outline-variant/20 overflow-hidden transition-all duration-300">
+                <button @click="activeFaq = (activeFaq === 1 ? null : 1)" class="w-full text-left px-6 py-5 flex justify-between items-center gap-4 cursor-pointer hover:bg-surface-container-low/50">
+                    <span class="font-headline-sm text-base md:text-lg text-primary font-semibold">How do I know my Dosha type?</span>
+                    <span class="material-symbols-outlined text-secondary transition-transform duration-300" :class="activeFaq === 1 ? 'rotate-180' : ''">keyboard_arrow_down</span>
+                </button>
+                <div x-cloak x-show="activeFaq === 1" x-transition class="px-6 pb-5 text-sm text-on-surface-variant leading-relaxed">
+                    You can use our interactive <a href="#quiz" class="text-secondary hover:underline font-semibold">Dosha Quiz</a> above to get a quick initial constitution analysis. For a comprehensive diagnostics report, we recommend scheduling a private session with our certified Vaidyas.
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="bg-surface rounded-2xl border border-outline-variant/20 overflow-hidden transition-all duration-300">
+                <button @click="activeFaq = (activeFaq === 2 ? null : 2)" class="w-full text-left px-6 py-5 flex justify-between items-center gap-4 cursor-pointer hover:bg-surface-container-low/50">
+                    <span class="font-headline-sm text-base md:text-lg text-primary font-semibold">Are all ingredients organic and sustainably sourced?</span>
+                    <span class="material-symbols-outlined text-secondary transition-transform duration-300" :class="activeFaq === 2 ? 'rotate-180' : ''">keyboard_arrow_down</span>
+                </button>
+                <div x-cloak x-show="activeFaq === 2" x-transition class="px-6 pb-5 text-sm text-on-surface-variant leading-relaxed">
+                    Yes, 100% of our botanicals are wild-harvested or organically farmed in peak seasons from local farms in India, ensuring peak therapeutic efficacy while supporting sustainable farming communities.
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="bg-surface rounded-2xl border border-outline-variant/20 overflow-hidden transition-all duration-300">
+                <button @click="activeFaq = (activeFaq === 3 ? null : 3)" class="w-full text-left px-6 py-5 flex justify-between items-center gap-4 cursor-pointer hover:bg-surface-container-low/50">
+                    <span class="font-headline-sm text-base md:text-lg text-primary font-semibold">What is the return policy for wellness products?</span>
+                    <span class="material-symbols-outlined text-secondary transition-transform duration-300" :class="activeFaq === 3 ? 'rotate-180' : ''">keyboard_arrow_down</span>
+                </button>
+                <div x-cloak x-show="activeFaq === 3" x-transition class="px-6 pb-5 text-sm text-on-surface-variant leading-relaxed">
+                    We offer a 30-day money-back guarantee on all our products if you do not see a positive difference in your skin or hair wellness, or if you experience any sensitivity.
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="bg-surface rounded-2xl border border-outline-variant/20 overflow-hidden transition-all duration-300">
+                <button @click="activeFaq = (activeFaq === 4 ? null : 4)" class="w-full text-left px-6 py-5 flex justify-between items-center gap-4 cursor-pointer hover:bg-surface-container-low/50">
+                    <span class="font-headline-sm text-base md:text-lg text-primary font-semibold">How long does shipping take?</span>
+                    <span class="material-symbols-outlined text-secondary transition-transform duration-300" :class="activeFaq === 4 ? 'rotate-180' : ''">keyboard_arrow_down</span>
+                </button>
+                <div x-cloak x-show="activeFaq === 4" x-transition class="px-6 pb-5 text-sm text-on-surface-variant leading-relaxed">
+                    We ship all over India. Orders are dispatched within 24-48 hours and typically arrive within 3-5 business days. Express shipping options are available at checkout.
+                </div>
+            </div>
         </div>
     </div>
 </section>
