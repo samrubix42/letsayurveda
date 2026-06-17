@@ -5,6 +5,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>LetsAyurveda | Timeless Wellness</title>
     <meta content="Ancient Ayurvedic wisdom for modern lives. Premium skincare, haircare, and wellness." name="description"/>
+    <meta name="robots" content="noindex, nofollow"/>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <!-- Material Symbols -->
