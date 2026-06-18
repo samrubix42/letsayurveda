@@ -6,134 +6,27 @@
     <title>LetsAyurveda | Timeless Wellness</title>
     <meta content="Ancient Ayurvedic wisdom for modern lives. Premium skincare, haircare, and wellness." name="description"/>
     <meta name="robots" content="noindex, nofollow"/>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <!-- Material Symbols -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet"/>
-    <!-- Alpine.js -->
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
-        .fill-icon {
-            font-variation-settings: 'FILL' 1;
-        }
-        [x-cloak] { display: none !important; }
-        
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-    </style>
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "on-surface": "#1b1c1c",
-                        "surface-variant": "#e4e2e1",
-                        "error-container": "#ffdad6",
-                        "secondary-fixed": "#ffdbd0",
-                        "inverse-surface": "#303030",
-                        "outline": "#737973",
-                        "background": "#fbf9f8",
-                        "on-secondary-container": "#793822",
-                        "on-error": "#ffffff",
-                        "primary-container": "#1b3022",
-                        "on-tertiary-fixed": "#261900",
-                        "surface-container-high": "#eae8e7",
-                        "on-secondary-fixed": "#390b00",
-                        "tertiary": "#211500",
-                        "on-secondary-fixed-variant": "#73341f",
-                        "on-tertiary-container": "#b18d48",
-                        "surface-bright": "#fbf9f8",
-                        "surface-container-low": "#f6f3f2",
-                        "surface": "#fbf9f8",
-                        "on-tertiary": "#ffffff",
-                        "inverse-primary": "#b4cdb8",
-                        "on-error-container": "#93000a",
-                        "primary": "#061b0e",
-                        "secondary": "#914b34",
-                        "inverse-on-surface": "#f3f0f0",
-                        "tertiary-container": "#3a2800",
-                        "on-secondary": "#ffffff",
-                        "on-surface-variant": "#434843",
-                        "surface-container": "#f0eded",
-                        "error": "#ba1a1a",
-                        "on-tertiary-fixed-variant": "#5d4201",
-                        "on-background": "#1b1c1c",
-                        "primary-fixed": "#d0e9d4",
-                        "surface-dim": "#dcd9d9",
-                        "surface-container-lowest": "#ffffff",
-                        "on-primary-fixed": "#0b2013",
-                        "primary-fixed-dim": "#b4cdb8",
-                        "outline-variant": "#c3c8c1",
-                        "secondary-fixed-dim": "#ffb59d",
-                        "surface-tint": "#4d6453",
-                        "secondary-container": "#ffa588",
-                        "on-primary-fixed-variant": "#364c3c",
-                        "on-primary": "#ffffff",
-                        "surface-container-highest": "#e4e2e1",
-                        "on-primary-container": "#819986",
-                        "tertiary-fixed": "#ffdea5",
-                        "tertiary-fixed-dim": "#e9c176"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    "spacing": {
-                        "gutter": "24px",
-                        "margin-mobile": "20px",
-                        "margin-desktop": "64px",
-                        "base": "8px",
-                        "section-gap-desktop": "80px",
-                        "section-gap-mobile": "48px"
-                    },
-                    "fontFamily": {
-                        "body-md": ["Inter"],
-                        "display-lg-mobile": ["Playfair Display"],
-                        "body-lg": ["Inter"],
-                        "display-lg": ["Playfair Display"],
-                        "headline-md": ["Playfair Display"],
-                        "headline-sm": ["Playfair Display"],
-                        "label-caps": ["Inter"]
-                    },
-                    "fontSize": {
-                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
-                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
-                    }
-                }
-            }
-        }
-    </script>
+    
+    <!-- Vite Assets (Includes compiled Tailwind CSS v4 & AlpineJS) -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-background text-on-surface font-body-md" x-data="{ cartOpen: false, quickViewOpen: false, selectedProduct: null, dosha: null, mobileMenuOpen: false }">
 
     <!-- Header component -->
-    <x-header />
+    <livewire:public.header />
 
     <!-- Main Page Content -->
     <main class="pt-20">
+        {{ $slot ?? '' }}
         @yield('content')
     </main>
 
     <!-- Footer component -->
-    <x-footer />
+    <livewire:public.footer />
 
     <!-- Mobile Slide-out Menu Drawer -->
     <div aria-labelledby="mobile-menu-title" aria-modal="true" class="fixed inset-0 z-[100]" role="dialog" x-cloak x-show="mobileMenuOpen">

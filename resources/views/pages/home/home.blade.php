@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<div>
 <!-- Hero Section (Desktop Grid / Mobile Stack) -->
 <section class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-6">
     <div class="grid grid-cols-1 lg:grid-cols-12 bg-surface-container rounded-3xl overflow-hidden min-h-[75vh]">
@@ -748,4 +746,4 @@
         </div>
     </div>
 </section>
-@endsection
+</div>
