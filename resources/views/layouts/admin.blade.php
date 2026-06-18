@@ -32,6 +32,7 @@
                 </div>
             </main>
         </div>
+        @include('components.admin.toast')
         
     </div>
 </body>

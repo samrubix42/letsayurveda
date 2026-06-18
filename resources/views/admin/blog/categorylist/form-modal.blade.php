@@ -63,45 +63,6 @@
                         @enderror
                     </div>
 
-                    <!-- Image Upload -->
-                    <div class="space-y-2">
-                        <label class="block text-xs font-label-caps text-slate-500 uppercase font-bold tracking-wider">Category Image</label>
-                        
-                        <div class="flex items-center gap-4">
-                            <!-- Preview Container -->
-                            <div class="w-20 h-20 rounded-xl overflow-hidden bg-slate-100 border border-slate-200 flex items-center justify-center shrink-0">
-                                @if ($imageFile)
-                                    <img src="{{ $imageFile->temporaryUrl() }}" class="w-full h-full object-cover" />
-                                @elseif ($image)
-                                    <img src="{{ $image }}" class="w-full h-full object-cover" />
-                                @else
-                                    <span class="material-symbols-outlined text-slate-400 text-3xl">image</span>
-                                @endif
-                            </div>
-
-                            <!-- File Input & Upload Button -->
-                            <div class="flex-1">
-                                <label class="relative inline-flex items-center gap-2 px-4 py-2.5 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl text-xs font-semibold text-slate-700 cursor-pointer active:scale-95 transition-all">
-                                    <span class="material-symbols-outlined text-sm">cloud_upload</span>
-                                    <span>Choose Image File</span>
-                                    <input wire:model="imageFile" type="file" class="hidden" accept="image/*" />
-                                </label>
-                                <p class="text-[10px] text-slate-400 mt-1.5">PNG, JPG or WEBP up to 1MB.</p>
-                                
-                                <div wire:loading wire:target="imageFile" class="text-xs text-emerald-600 font-semibold mt-1 flex items-center gap-1.5">
-                                    <svg class="animate-spin h-3.5 w-3.5 text-emerald-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                    </svg>
-                                    <span>Uploading image...</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        @error('imageFile') 
-                            <span class="text-xs text-rose-500 font-semibold block mt-1">{{ $message }}</span> 
-                        @enderror
-                    </div>
 
                     <!-- Status Checkbox -->
                     <div class="flex items-center gap-3 py-2">

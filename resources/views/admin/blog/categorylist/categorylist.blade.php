@@ -12,18 +12,6 @@
         </button>
     </div>
 
-    <!-- Feedback Message -->
-    @if (session()->has('message'))
-        <div x-data="{ show: true }" x-show="show" x-transition class="flex items-center justify-between p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl">
-            <div class="flex items-center gap-2 text-sm font-semibold">
-                <span class="material-symbols-outlined">check_circle</span>
-                <span>{{ session('message') }}</span>
-            </div>
-            <button @click="show = false" class="text-emerald-500 hover:text-emerald-800 cursor-pointer active:scale-90 transition-transform">
-                <span class="material-symbols-outlined text-sm">close</span>
-            </button>
-        </div>
-    @endif
 
     <!-- Filter & Table Card -->
     <div class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
@@ -55,15 +43,8 @@
                     @forelse($categories as $category)
                         <tr wire:key="category-{{ $category->id }}" class="hover:bg-slate-50/40 transition-colors">
                             
-                            <!-- Category Name & Image -->
-                            <td class="py-4 px-6 flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-lg overflow-hidden bg-slate-100 flex items-center justify-center border border-slate-200 shrink-0">
-                                    @if($category->image)
-                                        <img src="{{ $category->image }}" alt="{{ $category->name }}" class="w-full h-full object-cover"/>
-                                    @else
-                                        <span class="material-symbols-outlined text-slate-400 text-lg">spa</span>
-                                    @endif
-                                </div>
+                            <!-- Category Name -->
+                            <td class="py-4 px-6">
                                 <span class="font-bold text-slate-800">{{ $category->name }}</span>
                             </td>
 

@@ -3,13 +3,11 @@
 use Livewire\Component;
 use App\Models\BlogCategory;
 use Livewire\WithPagination;
-use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
 
 new class extends Component
 {
     use WithPagination;
-    use WithFileUploads;
 
     // Search query
     public $search = '';
@@ -18,8 +16,6 @@ new class extends Component
     public $categoryId = null;
     public $name = '';
     public $slug = '';
-    public $image = '';
-    public $imageFile = null;
     public $status = true;
 
     // Mode
@@ -44,8 +40,6 @@ new class extends Component
         $this->categoryId = null;
         $this->name = '';
         $this->slug = '';
-        $this->image = '';
-        $this->imageFile = null;
         $this->status = true;
         $this->isEditMode = false;
 
@@ -62,8 +56,6 @@ new class extends Component
         $category = BlogCategory::findOrFail($id);
         $this->name = $category->name;
         $this->slug = $category->slug;
-        $this->image = $category->image;
-        $this->imageFile = null;
         $this->status = (bool) $category->status;
 
         $this->dispatch('open-modal');
@@ -86,37 +78,29 @@ new class extends Component
             'status' => 'boolean',
         ];
 
-        if ($this->imageFile) {
-            $rules['imageFile'] = 'image|max:1024';
-        }
-
         $this->validate($rules);
-
-        $imagePath = $this->image;
-        if ($this->imageFile) {
-            $imagePath = '/storage/' . $this->imageFile->store('blog-categories', 'public');
-        }
 
         if ($this->isEditMode) {
             $category = BlogCategory::findOrFail($this->categoryId);
             $category->update([
                 'name' => $this->name,
                 'slug' => $this->slug,
-                'image' => $imagePath,
                 'status' => $this->status,
             ]);
-            session()->flash('message', 'Category updated successfully.');
         } else {
             BlogCategory::create([
                 'name' => $this->name,
                 'slug' => $this->slug,
-                'image' => $imagePath,
                 'status' => $this->status,
             ]);
-            session()->flash('message', 'Category created successfully.');
         }
 
-        $this->imageFile = null;
+        $this->dispatch('toast-show', [
+            'message' => $this->categoryId ? 'Category updated successfully!' : 'Category created successfully!',
+            'type' => 'success',
+            'position' => 'top-right',
+        ]);
+
         $this->dispatch('close-modal');
     }
 
@@ -127,7 +111,11 @@ new class extends Component
         $category->status = !$category->status;
         $category->save();
 
-        session()->flash('message', 'Category status updated successfully.');
+        $this->dispatch('toast-show', [
+            'message' => 'Category status updated successfully!',
+            'type' => 'success',
+            'position' => 'top-right',
+        ]);
     }
 
     // Delete Confirmation modal trigger
@@ -145,7 +133,11 @@ new class extends Component
             $category->delete();
             $this->deleteId = null;
 
-            session()->flash('message', 'Category deleted successfully.');
+            $this->dispatch('toast-show', [
+                'message' => 'Category deleted successfully!',
+                'type' => 'success',
+                'position' => 'top-right',
+            ]);
         }
 
         $this->dispatch('close-delete-modal');
