@@ -38,10 +38,10 @@
                 <span>Blog Categories</span>
             </a>
 
-            <!-- Blogs Link (Placeholder) -->
-            <a href="#" 
-               class="group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all opacity-50 cursor-not-allowed">
-                <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-400">
+            <!-- Blogs Link -->
+            <a href="/admin/blog" 
+               class="group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all {{ request()->is('admin/blog*') && !request()->is('admin/blog/categories*') ? 'bg-emerald-50 text-emerald-700 font-bold' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900' }}">
+                <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg border bg-white transition-all {{ request()->is('admin/blog*') && !request()->is('admin/blog/categories*') ? 'border-emerald-200 text-emerald-700' : 'border-slate-200 text-slate-500 group-hover:text-slate-800' }}">
                     <span class="material-symbols-outlined text-lg">article</span>
                 </span>
                 <span>Blogs</span>

@@ -11,6 +11,9 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet"/>
     
+    <!-- TinyMCE CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/tinymce@6/tinymce.min.js" referrerpolicy="origin"></script>
+    
     <!-- Vite Assets (compiled Tailwind CSS v4 & AlpineJS) -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
