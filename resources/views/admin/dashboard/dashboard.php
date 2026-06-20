@@ -2,8 +2,9 @@
 
 use Livewire\Component;
 use App\Models\BlogCategory;
+use Livewire\Attributes\Layout;
 
-new class extends Component
+new #[Layout('layouts::admin')] class extends Component
 {
     public function render()
     {
@@ -11,6 +12,6 @@ new class extends Component
 
         return view('admin.dashboard.dashboard', [
             'categoryCount' => $categoryCount,
-        ])->layout('layouts.admin');
+        ]);
     }
 };

@@ -4,8 +4,9 @@ use Livewire\Component;
 use App\Models\Blog;
 use Livewire\WithPagination;
 use Illuminate\Support\Facades\Storage;
+use Livewire\Attributes\Layout;
 
-new class extends Component
+new #[Layout('layouts::admin')] class extends Component
 {
     use WithPagination;
 
@@ -81,6 +82,6 @@ new class extends Component
 
         return view('admin.blog.list.list', [
             'blogs' => $blogs,
-        ])->layout('layouts.admin');
+        ]);
     }
 };

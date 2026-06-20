@@ -4,8 +4,9 @@ use Livewire\Component;
 use App\Models\BlogCategory;
 use Livewire\WithPagination;
 use Illuminate\Support\Str;
+use Livewire\Attributes\Layout;
 
-new class extends Component
+new #[Layout('layouts::admin')] class extends Component
 {
     use WithPagination;
 
@@ -151,6 +152,6 @@ new class extends Component
 
         return view('admin.blog.categorylist.categorylist', [
             'categories' => $categories,
-        ])->layout('layouts.admin');
+        ]);
     }
 };

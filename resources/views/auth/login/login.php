@@ -2,8 +2,9 @@
 
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
+use Livewire\Attributes\Layout;
 
-new class extends Component
+new #[Layout('layouts::auth')] class extends Component
 {
     public $email = '';
     public $password = '';
@@ -42,6 +43,6 @@ new class extends Component
 
     public function render()
     {
-        return view('auth.login.login')->layout('layouts.auth');
+        return view('auth.login.login');
     }
 };

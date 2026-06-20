@@ -3,10 +3,12 @@
 use Livewire\Component;
 use App\Models\Blog;
 use App\Models\BlogCategory;
+use Illuminate\Support\Facades\Auth;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
+use Livewire\Attributes\Layout;
 
-new class extends Component
+new #[Layout('layouts::admin')]class extends Component
 {
     use WithFileUploads;
 
@@ -54,7 +56,7 @@ new class extends Component
         }
 
         Blog::create([
-            'user_id' => auth()->id(),
+            'user_id' => Auth::id(),
             'category_id' => $this->category_id ?: null,
             'title' => $this->title,
             'slug' => $this->slug,
@@ -78,6 +80,6 @@ new class extends Component
 
         return view('admin.blog.add.add', [
             'categories' => $categories,
-        ])->layout('layouts.admin');
+        ]);
     }
 };

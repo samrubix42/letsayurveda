@@ -6,8 +6,9 @@ use App\Models\BlogCategory;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use Livewire\Attributes\Layout;
 
-new class extends Component
+new #[Layout('layouts::admin')] class extends Component
 {
     use WithFileUploads;
 
@@ -105,6 +106,6 @@ new class extends Component
 
         return view('admin.blog.update.update', [
             'categories' => $categories,
-        ])->layout('layouts.admin');
+        ]);
     }
 };
