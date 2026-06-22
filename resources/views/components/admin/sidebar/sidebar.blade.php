@@ -1,6 +1,62 @@
-<div>
+@php
+    // Define navigation items dynamically
+    $menus = [
+        [
+            'label' => 'Dashboard',
+            'href' => '/admin/dashboard',
+            'icon' => 'dashboard',
+            'active' => request()->is('admin/dashboard'),
+        ],
+        [
+            'label' => 'Product Categories',
+            'href' => '/admin/categories',
+            'icon' => 'shopping_bag',
+            'active' => request()->is('admin/categories*'),
+        ],
+        [
+            'label' => 'Blog Management',
+            'icon' => 'article',
+            'active' => request()->is('admin/blog*'),
+            'submenu' => [
+                [
+                    'label' => 'All Blogs',
+                    'href' => '/admin/blog',
+                    'active' => request()->is('admin/blog') || (request()->is('admin/blog/*') && !request()->is('admin/blog/categories*')),
+                ],
+                [
+                    'label' => 'Blog Categories',
+                    'href' => '/admin/blog/categories',
+                    'active' => request()->is('admin/blog/categories*'),
+                ],
+            ]
+        ],
+        [
+            'label' => 'Settings',
+            'href' => '#',
+            'icon' => 'settings',
+            'active' => false,
+            'disabled' => true,
+        ],
+    ];
+
+    // Standardized UI Classes
+    $menuItemClass = "group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all select-none cursor-pointer";
+    $menuItemActive = "bg-emerald-50 text-emerald-700 font-bold";
+    $menuItemInactive = "text-slate-600 hover:bg-slate-100 hover:text-slate-900";
+    $menuItemDisabled = "opacity-50 cursor-not-allowed";
+
+    $iconWrapperClass = "inline-flex h-8 w-8 items-center justify-center rounded-lg border bg-white transition-all";
+    $iconWrapperActive = "border-emerald-200 text-emerald-700";
+    $iconWrapperInactive = "border-slate-200 text-slate-500 group-hover:text-slate-800";
+
+    $submenuItemClass = "flex items-center gap-3 rounded-lg pl-14 pr-3 py-2 text-xs font-medium transition-all";
+    $submenuItemActive = "text-emerald-700 bg-emerald-50/50 font-semibold";
+    $submenuItemInactive = "text-slate-500 hover:bg-slate-50 hover:text-slate-800";
+@endphp
+
+<div class="h-full">
     <!-- Sidebar Outer Container -->
-    <aside class="fixed inset-y-0 left-0 z-50 flex flex-col w-full md:w-72 border-r border-slate-200/80 bg-white shadow-xl shadow-slate-900/10 transition-transform duration-300 ease-out md:translate-x-0 md:static md:inset-auto"
+    <aside class="fixed inset-y-0 left-0 z-50 flex flex-col w-full md:w-72 h-full border-r border-slate-200/80 bg-white shadow-xl shadow-slate-900/10 transition-transform duration-300 ease-out md:translate-x-0 md:static md:inset-auto md:h-full"
            :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'">
         
         <!-- Gradient Accent Bar -->
@@ -20,41 +76,54 @@
         <!-- Sidebar Navigation Links -->
         <nav class="flex-1 px-3 py-4 space-y-1.5 overflow-y-auto no-scrollbar font-medium">
             
-            <!-- Dashboard Link -->
-            <a href="/admin/dashboard" 
-               class="group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all {{ request()->is('admin/dashboard') ? 'bg-emerald-50 text-emerald-700 font-bold' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900' }}">
-                <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg border bg-white transition-all {{ request()->is('admin/dashboard') ? 'border-emerald-200 text-emerald-700' : 'border-slate-200 text-slate-500 group-hover:text-slate-800' }}">
-                    <span class="material-symbols-outlined text-lg">dashboard</span>
-                </span>
-                <span>Dashboard</span>
-            </a>
-
-            <!-- Blog Categories Link -->
-            <a href="/admin/blog/categories" 
-               class="group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all {{ request()->is('admin/blog/categories*') ? 'bg-emerald-50 text-emerald-700 font-bold' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900' }}">
-                <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg border bg-white transition-all {{ request()->is('admin/blog/categories*') ? 'border-emerald-200 text-emerald-700' : 'border-slate-200 text-slate-500 group-hover:text-slate-800' }}">
-                    <span class="material-symbols-outlined text-lg">category</span>
-                </span>
-                <span>Blog Categories</span>
-            </a>
-
-            <!-- Blogs Link -->
-            <a href="/admin/blog" 
-               class="group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all {{ request()->is('admin/blog*') && !request()->is('admin/blog/categories*') ? 'bg-emerald-50 text-emerald-700 font-bold' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900' }}">
-                <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg border bg-white transition-all {{ request()->is('admin/blog*') && !request()->is('admin/blog/categories*') ? 'border-emerald-200 text-emerald-700' : 'border-slate-200 text-slate-500 group-hover:text-slate-800' }}">
-                    <span class="material-symbols-outlined text-lg">article</span>
-                </span>
-                <span>Blogs</span>
-            </a>
-
-            <!-- Settings Link (Placeholder) -->
-            <a href="#" 
-               class="group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all opacity-50 cursor-not-allowed">
-                <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-400">
-                    <span class="material-symbols-outlined text-lg">settings</span>
-                </span>
-                <span>Settings</span>
-            </a>
+            @foreach($menus as $menu)
+                @if(isset($menu['submenu']))
+                    <!-- Submenu Item (collapsible using Alpine.js) -->
+                    <div x-data="{ open: @js($menu['active']) }" class="space-y-1">
+                        <button @click="open = !open" 
+                                type="button"
+                                class="w-full text-left {{ $menuItemClass }} {{ $menu['active'] ? $menuItemActive : $menuItemInactive }}">
+                            <span class="flex items-center gap-3 flex-1">
+                                <span class="{{ $iconWrapperClass }} {{ $menu['active'] ? $iconWrapperActive : $iconWrapperInactive }}">
+                                    <span class="material-symbols-outlined text-lg">{{ $menu['icon'] }}</span>
+                                </span>
+                                <span>{{ $menu['label'] }}</span>
+                            </span>
+                            <span class="material-symbols-outlined text-base transition-transform duration-200" 
+                                  :class="open ? 'rotate-90' : ''">
+                                chevron_right
+                            </span>
+                        </button>
+                        
+                        <div x-show="open" 
+                             x-cloak
+                             x-transition:enter="transition ease-out duration-150"
+                             x-transition:enter-start="opacity-0 transform -translate-y-1"
+                             x-transition:enter-end="opacity-100 transform translate-y-0"
+                             x-transition:leave="transition ease-in duration-100"
+                             x-transition:leave-start="opacity-100 transform translate-y-0"
+                             x-transition:leave-end="opacity-0 transform -translate-y-1"
+                             class="space-y-1">
+                            @foreach($menu['submenu'] as $subItem)
+                                <a href="{{ $subItem['href'] }}" 
+                                   class="{{ $submenuItemClass }} {{ $subItem['active'] ? $submenuItemActive : $submenuItemInactive }}">
+                                    <span>{{ $subItem['label'] }}</span>
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
+                @else
+                    <!-- Regular Menu Item -->
+                    <a href="{{ $menu['href'] }}" 
+                       class="{{ $menuItemClass }} {{ $menu['active'] ? $menuItemActive : $menuItemInactive }} {{ ($menu['disabled'] ?? false) ? $menuItemDisabled : '' }}"
+                       @if($menu['disabled'] ?? false) onclick="return false;" @endif>
+                        <span class="{{ $iconWrapperClass }} {{ $menu['active'] ? $iconWrapperActive : $iconWrapperInactive }}">
+                            <span class="material-symbols-outlined text-lg">{{ $menu['icon'] }}</span>
+                        </span>
+                        <span>{{ $menu['label'] }}</span>
+                    </a>
+                @endif
+            @endforeach
 
         </nav>
 

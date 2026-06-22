@@ -14,6 +14,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::livewire('/blog/add', 'admin::blog.add')->name('admin.blogs.create');
     Route::livewire('/blog/edit/{id}', 'admin::blog.update')->name('admin.blogs.edit');
     Route::livewire('/blog/categories', 'admin::blog.categorylist')->name('admin.categories');
+    Route::livewire('/categories', 'admin::categorylist')->name('admin.product-categories');
     
     // Logout Action Route
     Route::post('/logout', function () {
