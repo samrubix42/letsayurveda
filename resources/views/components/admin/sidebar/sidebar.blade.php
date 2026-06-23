@@ -20,6 +20,12 @@
             'active' => request()->is('admin/products*'),
         ],
         [
+            'label' => 'Variant Attributes',
+            'href' => '/admin/attributes',
+            'icon' => 'tune',
+            'active' => request()->is('admin/attributes*'),
+        ],
+        [
             'label' => 'Blog Management',
             'icon' => 'article',
             'active' => request()->is('admin/blog*'),

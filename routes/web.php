@@ -15,6 +15,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::livewire('/blog/edit/{id}', 'admin::blog.update')->name('admin.blogs.edit');
     Route::livewire('/blog/categories', 'admin::blog.categorylist')->name('admin.categories');
     Route::livewire('/categories', 'admin::categorylist')->name('admin.product-categories');
+    Route::livewire('/attributes', 'admin::attributelist')->name('admin.attributes');
     
     Route::livewire('/products', 'admin::product.list')->name('admin.products.index');
     Route::livewire('/products/add', 'admin::product.add')->name('admin.products.create');
