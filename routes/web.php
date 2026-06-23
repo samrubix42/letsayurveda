@@ -16,6 +16,10 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::livewire('/blog/categories', 'admin::blog.categorylist')->name('admin.categories');
     Route::livewire('/categories', 'admin::categorylist')->name('admin.product-categories');
     
+    Route::livewire('/products', 'admin::product.list')->name('admin.products.index');
+    Route::livewire('/products/add', 'admin::product.add')->name('admin.products.create');
+    Route::livewire('/products/edit/{product}', 'admin::product.update')->name('admin.products.edit');
+    
     // Logout Action Route
     Route::post('/logout', function () {
         Illuminate\Support\Facades\Auth::logout();

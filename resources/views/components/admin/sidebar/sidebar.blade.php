@@ -14,6 +14,12 @@
             'active' => request()->is('admin/categories*'),
         ],
         [
+            'label' => 'Products',
+            'href' => '/admin/products',
+            'icon' => 'grid_view',
+            'active' => request()->is('admin/products*'),
+        ],
+        [
             'label' => 'Blog Management',
             'icon' => 'article',
             'active' => request()->is('admin/blog*'),
