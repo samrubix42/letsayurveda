@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             LoginSeeder::class,
             AttributeSeeder::class,
+            CouponSeeder::class,
         ]);
     }
 }

@@ -26,6 +26,18 @@
             'active' => request()->is('admin/attributes*'),
         ],
         [
+            'label' => 'Inventory Management',
+            'href' => '/admin/inventory',
+            'icon' => 'inventory_2',
+            'active' => request()->is('admin/inventory*'),
+        ],
+        [
+            'label' => 'Coupons',
+            'href' => '/admin/coupons',
+            'icon' => 'confirmation_number',
+            'active' => request()->is('admin/coupons*'),
+        ],
+        [
             'label' => 'Blog Management',
             'icon' => 'article',
             'active' => request()->is('admin/blog*'),
