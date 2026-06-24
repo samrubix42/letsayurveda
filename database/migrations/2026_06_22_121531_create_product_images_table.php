@@ -21,7 +21,7 @@ return new class extends Migration
             // Variant Level Image 
             $table->foreignId('product_variant_id')
                 ->nullable()
-                ->constrained()
+                ->constrained('product_varients')
                 ->cascadeOnDelete();
             $table->string('image_path');
             $table->boolean('is_primary')->default(false);

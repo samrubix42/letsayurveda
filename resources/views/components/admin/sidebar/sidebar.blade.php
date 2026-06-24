@@ -14,6 +14,30 @@
             'active' => request()->is('admin/categories*'),
         ],
         [
+            'label' => 'Products',
+            'href' => '/admin/products',
+            'icon' => 'grid_view',
+            'active' => request()->is('admin/products*'),
+        ],
+        [
+            'label' => 'Variant Attributes',
+            'href' => '/admin/attributes',
+            'icon' => 'tune',
+            'active' => request()->is('admin/attributes*'),
+        ],
+        [
+            'label' => 'Inventory Management',
+            'href' => '/admin/inventory',
+            'icon' => 'inventory_2',
+            'active' => request()->is('admin/inventory*'),
+        ],
+        [
+            'label' => 'Coupons',
+            'href' => '/admin/coupons',
+            'icon' => 'confirmation_number',
+            'active' => request()->is('admin/coupons*'),
+        ],
+        [
             'label' => 'Blog Management',
             'icon' => 'article',
             'active' => request()->is('admin/blog*'),
