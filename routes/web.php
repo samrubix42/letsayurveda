@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 // Public Routes
 Route::livewire('/', 'pages::home');
+Route::livewire('/blogs', 'pages::blogs')->name('blogs');
+Route::livewire('/blogs/{slug}', 'pages::blog-view')->name('blogs.view');
 Route::livewire('/login','auth::login')->name('login');
 
 // Admin Portal Routes (View-based Multi-File Components)

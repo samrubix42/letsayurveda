@@ -20,7 +20,7 @@
             <a href="#about" class="hover:text-secondary transition-colors duration-300">About</a>
             <a href="#categories" class="hover:text-secondary transition-colors duration-300">Categories</a>
             <a href="#consultation" class="hover:text-secondary transition-colors duration-300">Consultation</a>
-            <a href="#blog" class="hover:text-secondary transition-colors duration-300">Blog</a>
+            <a href="{{ route('blogs') }}" class="hover:text-secondary transition-colors duration-300">Blog</a>
         </nav>
         
         <!-- Right: Actions (Search, Cart Drawer Trigger) -->

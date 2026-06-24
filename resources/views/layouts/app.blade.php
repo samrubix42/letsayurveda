@@ -58,7 +58,7 @@
                             <a @click="mobileMenuOpen = false" href="#about" class="hover:text-secondary py-2 border-b border-outline-variant/10">About</a>
                             <a @click="mobileMenuOpen = false" href="#categories" class="hover:text-secondary py-2 border-b border-outline-variant/10">Categories</a>
                             <a @click="mobileMenuOpen = false" href="#consultation" class="hover:text-secondary py-2 border-b border-outline-variant/10">Consultation</a>
-                            <a @click="mobileMenuOpen = false" href="#blog" class="hover:text-secondary py-2">Blog</a>
+                            <a @click="mobileMenuOpen = false" href="{{ route('blogs') }}" class="hover:text-secondary py-2">Blog</a>
                         </nav>
                     </div>
                 </div>
