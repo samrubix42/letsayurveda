@@ -16,7 +16,7 @@
         
         <!-- Center: Desktop Navigation Links -->
         <nav class="hidden md:flex items-center gap-8 font-label-caps text-[11px] tracking-widest text-on-surface-variant font-medium">
-            <a href="#shop" class="hover:text-secondary transition-colors duration-300">Shop</a>
+            <a href="{{ route('products') }}" class="hover:text-secondary transition-colors duration-300">Shop</a>
             <a href="#about" class="hover:text-secondary transition-colors duration-300">About</a>
             <a href="#categories" class="hover:text-secondary transition-colors duration-300">Categories</a>
             <a href="#consultation" class="hover:text-secondary transition-colors duration-300">Consultation</a>

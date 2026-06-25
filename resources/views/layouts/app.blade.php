@@ -54,7 +54,7 @@
                             </button>
                         </div>
                         <nav class="mt-8 flex flex-col gap-6 font-label-caps text-label-caps tracking-widest text-primary text-lg">
-                            <a @click="mobileMenuOpen = false" href="#shop" class="hover:text-secondary py-2 border-b border-outline-variant/10">Shop</a>
+                            <a @click="mobileMenuOpen = false" href="{{ route('products') }}" class="hover:text-secondary py-2 border-b border-outline-variant/10">Shop</a>
                             <a @click="mobileMenuOpen = false" href="#about" class="hover:text-secondary py-2 border-b border-outline-variant/10">About</a>
                             <a @click="mobileMenuOpen = false" href="#categories" class="hover:text-secondary py-2 border-b border-outline-variant/10">Categories</a>
                             <a @click="mobileMenuOpen = false" href="#consultation" class="hover:text-secondary py-2 border-b border-outline-variant/10">Consultation</a>
