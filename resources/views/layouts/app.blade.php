@@ -59,6 +59,26 @@
                             <a @click="mobileMenuOpen = false" href="#categories" class="hover:text-secondary py-2 border-b border-outline-variant/10">Categories</a>
                             <a @click="mobileMenuOpen = false" href="#consultation" class="hover:text-secondary py-2 border-b border-outline-variant/10">Consultation</a>
                             <a @click="mobileMenuOpen = false" href="{{ route('blogs') }}" class="hover:text-secondary py-2">Blog</a>
+
+                            @auth
+                                <div class="mt-4 pt-4 border-t border-outline-variant/20 flex flex-col gap-4 font-body-md text-sm text-slate-700">
+                                    <a @click="mobileMenuOpen = false" href="{{ route('dashboard') }}" wire:navigate class="text-xs font-bold text-secondary hover:text-secondary/80 flex items-center gap-2"><span class="material-symbols-outlined text-lg">account_circle</span> {{ Auth::user()->name }}</a>
+                                    @if(Auth::user()->is_admin)
+                                        <a @click="mobileMenuOpen = false" href="{{ route('admin.dashboard') }}" wire:navigate class="hover:text-secondary py-2 font-bold flex items-center gap-2"><span class="material-symbols-outlined text-lg">dashboard</span> Admin Portal</a>
+                                    @endif
+                                    <form method="POST" action="{{ route('logout') }}" class="w-full">
+                                        @csrf
+                                        <button type="submit" class="w-full text-left text-rose-600 hover:text-rose-700 py-2 font-bold flex items-center gap-2 cursor-pointer font-label-caps text-label-caps tracking-widest">
+                                            <span class="material-symbols-outlined text-lg">logout</span> Sign Out
+                                        </button>
+                                    </form>
+                                </div>
+                            @else
+                                <div class="mt-4 pt-4 border-t border-outline-variant/20 flex flex-col gap-4">
+                                    <a @click="mobileMenuOpen = false" href="{{ route('login') }}" wire:navigate class="hover:text-secondary py-2 font-bold flex items-center gap-2"><span class="material-symbols-outlined text-lg">login</span> Sign In</a>
+                                    <a @click="mobileMenuOpen = false" href="{{ route('register') }}" wire:navigate class="hover:text-secondary py-2 font-bold flex items-center gap-2"><span class="material-symbols-outlined text-lg">person_add</span> Register</a>
+                                </div>
+                            @endauth
                         </nav>
                     </div>
                 </div>

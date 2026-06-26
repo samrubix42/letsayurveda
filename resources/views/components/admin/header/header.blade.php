@@ -58,7 +58,7 @@
                 
                 <hr class="border-slate-100 my-1"/>
 
-                <form method="POST" action="/admin/logout" class="block w-full">
+                <form method="POST" action="{{ route('logout') }}" class="block w-full">
                     @csrf
                     <button type="submit" class="flex w-full items-center gap-2 px-4 py-2 text-sm text-rose-600 hover:bg-rose-50 transition-colors text-left cursor-pointer">
                         <span class="material-symbols-outlined text-sm text-rose-500">logout</span>

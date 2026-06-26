@@ -33,6 +33,28 @@
                 <span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
                 <span class="absolute top-1 right-1 bg-secondary text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold">2</span>
             </button>
+
+            <!-- Auth/Account Action -->
+            @auth
+                <div class="flex items-center gap-2 border-l border-outline-variant/20 pl-2">
+                    <a href="{{ route('dashboard') }}" wire:navigate class="text-xs font-semibold text-on-surface-variant hover:text-secondary transition-colors hidden lg:inline-block">Hi, {{ explode(' ', Auth::user()->name)[0] }}</a>
+                    @if(Auth::user()->is_admin)
+                        <a href="{{ route('admin.dashboard') }}" wire:navigate class="cursor-pointer text-secondary hover:text-secondary/80 p-2 rounded-full hover:bg-surface-container/50 flex items-center justify-center" title="Admin Dashboard">
+                            <span class="material-symbols-outlined">dashboard</span>
+                        </a>
+                    @endif
+                    <form method="POST" action="{{ route('logout') }}" class="inline">
+                        @csrf
+                        <button type="submit" class="cursor-pointer active:scale-95 text-on-surface-variant hover:text-rose-600 transition-colors p-2 rounded-full hover:bg-surface-container/50 flex items-center justify-center" title="Sign Out">
+                            <span class="material-symbols-outlined">logout</span>
+                        </button>
+                    </form>
+                </div>
+            @else
+                <a href="{{ route('login') }}" wire:navigate class="cursor-pointer active:scale-95 text-on-surface-variant hover:text-secondary transition-colors p-2 rounded-full hover:bg-surface-container/50 flex items-center justify-center border-l border-outline-variant/20 pl-2" title="Sign In / Register">
+                    <span class="material-symbols-outlined">account_circle</span>
+                </a>
+            @endauth
         </div>
         
     </div>

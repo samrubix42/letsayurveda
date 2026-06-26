@@ -8,10 +8,26 @@ Route::livewire('/products', 'pages::product.product')->name('products');
 Route::livewire('/products/{slug}', 'pages::product.product-view')->name('products.view');
 Route::livewire('/blogs', 'pages::blogs')->name('blogs');
 Route::livewire('/blogs/{slug}', 'pages::blog-view')->name('blogs.view');
-Route::livewire('/login','auth::login')->name('login');
+
+// Authentication Routes
+Route::livewire('/login', 'auth::user.login')->name('login');
+Route::livewire('/register', 'auth::user.register')->name('register');
+Route::livewire('/admin/login', 'auth::login')->name('admin.login');
+
+Route::middleware('auth')->group(function () {
+    Route::livewire('/dashboard', 'pages::user.dashboard')->name('dashboard');
+
+    Route::post('/logout', function () {
+        $isAdmin = Illuminate\Support\Facades\Auth::check() && Illuminate\Support\Facades\Auth::user()->is_admin;
+        Illuminate\Support\Facades\Auth::logout();
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+        return redirect()->route($isAdmin ? 'admin.login' : 'login');
+    })->name('logout');
+});
 
 // Admin Portal Routes (View-based Multi-File Components)
-Route::prefix('admin')->middleware('auth')->group(function () {
+Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::redirect('/', '/admin/dashboard');
     Route::livewire('/dashboard', 'admin::dashboard')->name('admin.dashboard');
     Route::livewire('/blog', 'admin::blog.list')->name('admin.blogs');
@@ -26,12 +42,4 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::livewire('/products', 'admin::product.list')->name('admin.products.index');
     Route::livewire('/products/add', 'admin::product.add')->name('admin.products.create');
     Route::livewire('/products/edit/{product}', 'admin::product.update')->name('admin.products.edit');
-    
-    // Logout Action Route
-    Route::post('/logout', function () {
-        Illuminate\Support\Facades\Auth::logout();
-        request()->session()->invalidate();
-        request()->session()->regenerateToken();
-        return redirect()->route('login');
-    })->name('logout');
 });

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>LetsAyurveda | Admin Login</title>
+    <title>{{ $title ?? 'LetsAyurveda' }}</title>
     <meta name="robots" content="noindex, nofollow"/>
     
     <!-- Material Symbols -->
@@ -14,7 +14,7 @@
     <!-- Vite Assets (compiled Tailwind CSS v4 & AlpineJS) -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="h-full font-body-md antialiased text-slate-800 flex items-center justify-center bg-gradient-to-br from-emerald-500/10 via-slate-50 to-teal-500/10 p-4">
+<body class="h-full font-body-md antialiased text-on-surface flex items-center justify-center bg-gradient-to-br from-secondary/10 via-background to-primary/10 p-4">
     
     {{ $slot }}
 

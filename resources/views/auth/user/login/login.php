@@ -4,7 +4,7 @@ use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Layout;
 
-new #[Layout('layouts::auth', ['title' => 'LetsAyurveda | Admin Login'])] class extends Component
+new #[Layout('layouts::auth', ['title' => 'LetsAyurveda | Login'])] class extends Component
 {
     public $email = '';
     public $password = '';
@@ -16,7 +16,7 @@ new #[Layout('layouts::auth', ['title' => 'LetsAyurveda | Admin Login'])] class 
             if (Auth::user()->is_admin) {
                 return $this->redirect('/admin/dashboard', navigate: true);
             }
-            return $this->redirect('/', navigate: true);
+            return $this->redirect('/dashboard', navigate: true);
         }
     }
 
@@ -28,28 +28,17 @@ new #[Layout('layouts::auth', ['title' => 'LetsAyurveda | Admin Login'])] class 
         ]);
 
         if (Auth::attempt(['email' => $this->email, 'password' => $this->password], $this->remember)) {
-            if (!Auth::user()->is_admin) {
-                Auth::logout();
-                session()->invalidate();
-                session()->regenerateToken();
-
-                $this->addError('email', 'Access Denied: You do not have administrative privileges.');
-                $this->dispatch('toast-show', [
-                    'message' => 'Login Failed',
-                    'description' => 'You do not have administrative privileges.',
-                    'type' => 'danger',
-                    'position' => 'top-right',
-                ]);
-                return;
-            }
-
             session()->regenerate();
-            session()->flash('message', 'Welcome back to LetsAyurveda!');
-            return $this->redirect('/admin/dashboard', navigate: true);
+            session()->flash('message', 'Welcome back!');
+
+            if (Auth::user()->is_admin) {
+                return $this->redirect('/admin/dashboard', navigate: true);
+            }
+            return $this->redirect('/dashboard', navigate: true);
         }
 
         $this->addError('email', 'The provided credentials do not match our records.');
-        
+
         $this->dispatch('toast-show', [
             'message' => 'Login Failed',
             'description' => 'The credentials you entered do not match our records.',
@@ -60,6 +49,6 @@ new #[Layout('layouts::auth', ['title' => 'LetsAyurveda | Admin Login'])] class 
 
     public function render()
     {
-        return view('auth.login.login');
+        return view('auth.user.login.login');
     }
 };

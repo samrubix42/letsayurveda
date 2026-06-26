@@ -18,6 +18,7 @@ class LoginSeeder extends Seeder
             [
                 'name' => 'Administrator',
                 'password' => Hash::make('password'),
+                'is_admin' => true,
                 'email_verified_at' => now(),
             ]
         );
