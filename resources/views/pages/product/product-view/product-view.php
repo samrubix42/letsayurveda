@@ -86,6 +86,34 @@ new class extends Component
         return $this->product->variants->firstWhere('id', $this->selectedVariantId);
     }
 
+    public function addToCart()
+    {
+        $variant = $this->getSelectedVariant();
+        if (!$variant) {
+            return;
+        }
+
+        $cart = session()->get('cart', []);
+        
+        $maxStock = $variant->inventory ? $variant->inventory->quantity : 100;
+        $currentQty = $cart[$variant->id] ?? 0;
+        $newQty = $currentQty + $this->quantity;
+        
+        if ($newQty > $maxStock) {
+            $newQty = $maxStock;
+        }
+        
+        if ($newQty <= 0) {
+            unset($cart[$variant->id]);
+        } else {
+            $cart[$variant->id] = $newQty;
+        }
+        
+        session()->put('cart', $cart);
+        
+        $this->dispatch('cart-updated');
+    }
+
     public function render()
     {
         return view('pages.product.product-view.product-view')

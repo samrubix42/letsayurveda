@@ -148,7 +148,7 @@
                 @endphp
                 
                 <div class="bg-surface rounded-2xl overflow-hidden shadow-sm border border-outline-variant/20 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col group">
-                    <div @click="selectedProduct = { name: '{{ addslashes($prod->name) }}', price: '₹{{ number_format($displayPrice) }}', desc: '{{ addslashes($prod->short_description) }}', image: '{{ $imageSrc }}' }; quickViewOpen = true" class="relative aspect-[4/5] overflow-hidden cursor-pointer">
+                    <div @click="selectedProduct = { id: {{ $prod->id }}, name: '{{ addslashes($prod->name) }}', price: '₹{{ number_format($displayPrice) }}', desc: '{{ addslashes($prod->short_description) }}', image: '{{ $imageSrc }}' }; quickViewOpen = true" class="relative aspect-[4/5] overflow-hidden cursor-pointer">
                         <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="{{ $imageSrc }}" alt="{{ $prod->name }}"/>
                         <div class="absolute top-4 left-4 bg-secondary-container/90 text-on-secondary-container px-3 py-1 rounded-full text-[10px] font-label-caps font-bold uppercase">{{ $catName }}</div>
                     </div>
@@ -163,7 +163,7 @@
                             <span class="text-xs text-on-surface-variant ml-1">(45)</span>
                         </div>
                         
-                        <h4 class="font-headline-sm text-lg text-primary font-bold mb-2 cursor-pointer hover:text-secondary transition-colors" @click="selectedProduct = { name: '{{ addslashes($prod->name) }}', price: '₹{{ number_format($displayPrice) }}', desc: '{{ addslashes($prod->short_description) }}', image: '{{ $imageSrc }}' }; quickViewOpen = true">
+                        <h4 class="font-headline-sm text-lg text-primary font-bold mb-2 cursor-pointer hover:text-secondary transition-colors" @click="selectedProduct = { id: {{ $prod->id }}, name: '{{ addslashes($prod->name) }}', price: '₹{{ number_format($displayPrice) }}', desc: '{{ addslashes($prod->short_description) }}', image: '{{ $imageSrc }}' }; quickViewOpen = true">
                             {{ $prod->name }}
                         </h4>
                         
@@ -179,7 +179,11 @@
                                 @endif
                             </div>
                             
-                            <button @click="cartOpen = true" class="bg-primary text-white p-3 rounded-full hover:bg-secondary hover:shadow-md transition-all active:scale-90 flex items-center justify-center cursor-pointer">
+                            <button 
+                                @click="$dispatch('add-to-cart', { productId: {{ $prod->id }} }); cartOpen = true" 
+                                @if($stock <= 0) disabled @endif
+                                class="bg-primary text-white p-3 rounded-full hover:bg-secondary hover:shadow-md transition-all active:scale-90 flex items-center justify-center cursor-pointer disabled:bg-surface-container disabled:text-on-surface-variant/40 disabled:cursor-not-allowed"
+                            >
                                 <span class="material-symbols-outlined text-base">add_shopping_cart</span>
                             </button>
                         </div>

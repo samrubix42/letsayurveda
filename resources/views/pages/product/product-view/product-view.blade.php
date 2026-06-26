@@ -196,6 +196,7 @@
 
                     <!-- Add To Cart Button -->
                     <button 
+                        wire:click="addToCart"
                         @click="cartOpen = true"
                         @if(!$selectedVariantId || $stock <= 0) disabled @endif
                         class="flex-1 w-full bg-primary hover:bg-secondary text-white py-4 rounded-full font-label-caps tracking-widest text-xs font-bold transition-all active:scale-95 shadow-md flex items-center justify-center gap-3 cursor-pointer disabled:bg-surface-container disabled:text-on-surface-variant/40 disabled:cursor-not-allowed"

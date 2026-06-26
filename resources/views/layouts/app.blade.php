@@ -32,7 +32,13 @@
     <livewire:public.footer />
 
     <!-- Mobile Slide-out Menu Drawer -->
-    <div aria-labelledby="mobile-menu-title" aria-modal="true" class="fixed inset-0 z-[100]" role="dialog" x-cloak x-show="mobileMenuOpen">
+    <div aria-labelledby="mobile-menu-title" aria-modal="true" class="fixed inset-0 z-[100]" role="dialog" x-cloak x-show="mobileMenuOpen"
+         x-transition:enter="transition-opacity ease-linear duration-500"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition-opacity ease-linear duration-500"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0">
         <div @click="mobileMenuOpen = false" class="absolute inset-0 bg-black/30 backdrop-blur-sm"
              x-transition:enter="ease-in-out duration-500"
              x-transition:enter-end="opacity-100"
@@ -90,7 +96,13 @@
     </div>
 
     <!-- Cart Drawer -->
-    <div aria-labelledby="slide-over-title" aria-modal="true" class="fixed inset-0 z-[100]" role="dialog" x-cloak x-show="cartOpen">
+    <div aria-labelledby="slide-over-title" aria-modal="true" class="fixed inset-0 z-[100]" role="dialog" x-cloak x-show="cartOpen"
+         x-transition:enter="transition-opacity ease-linear duration-500"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition-opacity ease-linear duration-500"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0">
         <div @click="cartOpen = false" class="absolute inset-0 bg-black/30 backdrop-blur-sm"
              x-transition:enter="ease-in-out duration-500"
              x-transition:enter-end="opacity-100"
@@ -106,52 +118,7 @@
                  x-transition:leave="transform transition ease-in-out duration-500"
                  x-transition:leave-end="translate-x-full"
                  x-transition:leave-start="translate-x-0">
-                <div class="h-full flex flex-col bg-surface shadow-2xl">
-                    <div class="flex-1 py-6 overflow-y-auto px-margin-mobile">
-                        <div class="flex items-start justify-between">
-                            <h2 class="font-headline-sm text-headline-sm text-primary">Your Cart</h2>
-                            <button @click="cartOpen = false" class="text-on-surface-variant cursor-pointer active:scale-95" type="button">
-                                <span class="material-symbols-outlined" data-icon="close">close</span>
-                            </button>
-                        </div>
-                        <div class="mt-12 space-y-8">
-                            <div class="flex gap-4">
-                                <div class="w-20 h-24 bg-surface-container rounded-lg overflow-hidden shrink-0">
-                                    <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaGcUHN_hSef4gbPhjwzrWRlF0VQd9mLMoo7bW_ZzvQqgUT6Mm2_btdPirXAUqgrhTaj5ZaMUZJNh_LhycWfK4RLmgi9n53hCH25gGLekBSSwDObkIW1O7PNN_gH0H0rWzDa2dNVRus-hHpHlZFLlUK7Smk9P0I5pTGDc7jurdCQALUXRzHToMOKAybjuQiIuK480TVeKqeyg_f3We_YwLzOPnrS95cdkqJd78qU470nXLRukT5ZVzg2k8Pg6EU7yMYqD123jAlCr1" alt="Radiance Face Oil"/>
-                                </div>
-                                <div class="flex flex-col justify-between py-1">
-                                    <div>
-                                        <h3 class="font-bold text-primary">Radiance Face Oil</h3>
-                                        <p class="text-sm text-on-surface-variant">Qty: 1</p>
-                                    </div>
-                                    <p class="font-bold text-secondary">₹1,850</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4">
-                                <div class="w-20 h-24 bg-surface-container rounded-lg overflow-hidden shrink-0">
-                                    <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQV7B1p6XZu46rVb_AKL5PvxUBWaqsj45IOBRHc-YNHFSxGRtukQMVZ_-9zDf1N7FGDsIeIV63t4STcavH_jtBrdCG6oEyKRN1rGhLXYPfBN9i_2lJgZ8o5tAmoNwsm4srlJaQ2RFco2B4f5wi5FQcJBtgqpsRzIN7YsKqDKSONvndofnY2arxv7CiKzMO0WmKWNVvW4hHkvKsfMQBRQiCSrCQPw_JF_-v2kFtrlBi4KLmfugFnaBzXrx_oTP_vx2BXNMPBRDEazLQ" alt="Vata Balancing Balm"/>
-                                </div>
-                                <div class="flex flex-col justify-between py-1">
-                                    <div>
-                                        <h3 class="font-bold text-primary">Vata Balancing Balm</h3>
-                                        <p class="text-sm text-on-surface-variant">Qty: 1</p>
-                                    </div>
-                                    <p class="font-bold text-secondary">₹690</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="border-t border-outline-variant p-6 space-y-4 bg-surface-container-low">
-                        <div class="flex justify-between font-headline-sm text-headline-sm">
-                            <span>Subtotal</span>
-                            <span>₹2,540.00</span>
-                        </div>
-                        <p class="text-sm text-on-surface-variant italic">Shipping and taxes calculated at checkout.</p>
-                        <button class="w-full bg-secondary text-white py-4 rounded-full font-label-caps tracking-widest text-label-caps hover:bg-secondary/90 active:scale-95 transition-all">
-                            PROCEED TO CHECKOUT
-                        </button>
-                    </div>
-                </div>
+                <livewire:public.cart />
             </div>
         </div>
     </div>
@@ -184,7 +151,7 @@
                 <p class="font-body-md text-on-surface-variant mb-6" x-text="selectedProduct?.desc"></p>
                 <div class="flex items-center justify-between">
                     <span class="font-headline-sm text-headline-sm text-secondary" x-text="selectedProduct?.price"></span>
-                    <button @click="quickViewOpen = false; cartOpen = true" class="bg-primary hover:bg-primary-container text-white px-6 py-3 rounded-full font-label-caps text-[10px] tracking-widest active:scale-95 transition-transform cursor-pointer">
+                    <button @click="$dispatch('add-to-cart', { productId: selectedProduct.id }); quickViewOpen = false; cartOpen = true" class="bg-primary hover:bg-primary-container text-white px-6 py-3 rounded-full font-label-caps text-[10px] tracking-widest active:scale-95 transition-transform cursor-pointer">
                         ADD TO CART
                     </button>
                 </div>

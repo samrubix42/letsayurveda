@@ -31,7 +31,9 @@
             
             <button @click="cartOpen = true" class="cursor-pointer active:scale-95 transition-transform text-primary relative p-2 rounded-full hover:bg-surface-container/50">
                 <span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
-                <span class="absolute top-1 right-1 bg-secondary text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold">2</span>
+                @if($cartCount > 0)
+                    <span class="absolute top-1 right-1 bg-secondary text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold">{{ $cartCount }}</span>
+                @endif
             </button>
 
             <!-- Auth/Account Action -->

@@ -261,6 +261,7 @@
                                 <!-- Product Image Container -->
                                 <div 
                                     @click="selectedProduct = { 
+                                        id: {{ $prod->id }},
                                         name: '{{ addslashes($prod->name) }}', 
                                         price: '₹{{ $salePrice ?? $price }}', 
                                         desc: '{{ addslashes($prod->short_description) }}', 
@@ -317,7 +318,7 @@
                                         
                                         <!-- Cart Trigger button -->
                                         <button 
-                                            @click="cartOpen = true"
+                                            @click="$dispatch('add-to-cart', { productId: {{ $prod->id }} }); cartOpen = true"
                                             @if($stock <= 0) disabled @endif
                                             class="p-3.5 rounded-full bg-primary hover:bg-secondary hover:shadow-md text-white transition-all duration-300 active:scale-90 flex items-center justify-center cursor-pointer disabled:bg-surface-container disabled:text-on-surface-variant/40 disabled:cursor-not-allowed"
                                         >
@@ -338,7 +339,13 @@
         </div>
 
         <!-- Mobile Filters Slide-over Drawer -->
-        <div aria-labelledby="mobile-filters-title" aria-modal="true" class="fixed inset-0 z-[100] lg:hidden" role="dialog" x-cloak x-show="mobileFiltersOpen">
+        <div aria-labelledby="mobile-filters-title" aria-modal="true" class="fixed inset-0 z-[100] lg:hidden" role="dialog" x-cloak x-show="mobileFiltersOpen"
+             x-transition:enter="transition-opacity ease-linear duration-500"
+             x-transition:enter-start="opacity-0"
+             x-transition:enter-end="opacity-100"
+             x-transition:leave="transition-opacity ease-linear duration-500"
+             x-transition:leave-start="opacity-100"
+             x-transition:leave-end="opacity-0">
             <!-- Backdrop -->
             <div @click="mobileFiltersOpen = false" class="absolute inset-0 bg-black/30 backdrop-blur-sm"
                  x-transition:enter="ease-in-out duration-500"
