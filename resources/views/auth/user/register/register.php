@@ -40,6 +40,8 @@ new #[Layout('layouts::auth', ['title' => 'LetsAyurveda | Register'])] class ext
 
         Auth::login($user);
 
+        \App\Models\CartItem::mergeSessionCartWithUser($user->id);
+
         session()->flash('message', 'Registration successful! Welcome to LetsAyurveda.');
 
         return $this->redirect('/dashboard', navigate: true);

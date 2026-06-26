@@ -15,7 +15,11 @@ new class extends Component
     #[On('cart-updated')]
     public function updateCartCount()
     {
-        $cart = session()->get('cart', []);
-        $this->cartCount = array_sum($cart);
+        if (auth()->check()) {
+            $this->cartCount = \App\Models\CartItem::where('user_id', auth()->id())->sum('quantity');
+        } else {
+            $cart = session()->get('cart', []);
+            $this->cartCount = array_sum($cart);
+        }
     }
 };

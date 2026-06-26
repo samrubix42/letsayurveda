@@ -28,6 +28,8 @@ new #[Layout('layouts::auth', ['title' => 'LetsAyurveda | Login'])] class extend
         ]);
 
         if (Auth::attempt(['email' => $this->email, 'password' => $this->password], $this->remember)) {
+            \App\Models\CartItem::mergeSessionCartWithUser(Auth::id());
+            
             session()->regenerate();
             session()->flash('message', 'Welcome back!');
 

@@ -87,9 +87,15 @@
                 <span class="text-secondary font-bold">₹{{ number_format($subtotal, 0) }}</span>
             </div>
             <p class="text-xs text-on-surface-variant italic leading-relaxed">Shipping and taxes calculated at checkout.</p>
-            <button class="w-full bg-secondary text-white py-4 rounded-full font-label-caps tracking-widest text-xs font-bold hover:bg-secondary/90 active:scale-[0.98] transition-all hover:shadow-md cursor-pointer">
-                PROCEED TO CHECKOUT
-            </button>
+            
+            <div class="flex flex-col gap-3">
+                <a href="{{ route('cart') }}" @click="cartOpen = false" wire:navigate class="block w-full text-center bg-primary text-white py-3.5 rounded-full font-label-caps tracking-widest text-xs font-bold hover:bg-secondary active:scale-[0.98] transition-all hover:shadow-md cursor-pointer">
+                    VIEW SHOPPING CART
+                </a>
+                <button class="w-full border border-outline text-primary py-3.5 rounded-full font-label-caps tracking-widest text-xs font-bold hover:bg-surface-container active:scale-[0.98] transition-all cursor-pointer">
+                    PROCEED TO CHECKOUT
+                </button>
+            </div>
         </div>
     @endif
 </div>
