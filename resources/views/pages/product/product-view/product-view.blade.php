@@ -290,7 +290,7 @@
                             $relStock = $relDefVar && $relDefVar->inventory ? $relDefVar->inventory->quantity : 0;
                             
                             $relImg = $rel->primaryImage ? $rel->primaryImage->image_path : null;
-                            $relImgSrc = $relImg ? '/' . $relImg : 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&q=80&w=400';
+                            $relImgSrc = ($relImg && file_exists(public_path($relImg))) ? '/' . $relImg : 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&q=80&w=400';
                         @endphp
                         <div class="bg-surface rounded-3xl overflow-hidden shadow-sm border border-outline-variant/10 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col group relative">
                             

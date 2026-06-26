@@ -232,13 +232,7 @@
                                 
                                 // Determine image path
                                 $image = $prod->primaryImage ? $prod->primaryImage->image_path : null;
-                                $imageSrc = null;
-                                if ($image) {
-                                    $imageSrc = '/' . $image;
-                                }
-                                if (!$imageSrc) {
-                                    $imageSrc = 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&q=80&w=600';
-                                }
+                                $imageSrc = ($image && file_exists(public_path($image))) ? '/' . $image : 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&q=80&w=600';
 
                                 // Get category name
                                 $catName = $prod->category ? $prod->category->name : 'Wellness';

@@ -9,18 +9,18 @@
                 <span class="material-symbols-outlined text-2xl" data-icon="menu">menu</span>
             </button>
             
-            <a href="/" class="flex items-center gap-3 active:scale-[0.98] transition-transform">
+            <a href="/" wire:navigate class="flex items-center gap-3 active:scale-[0.98] transition-transform">
                 <img src="/logo.png" alt="LetsAyurveda Logo" class="h-12 w-auto object-contain">
             </a>
         </div>
         
         <!-- Center: Desktop Navigation Links -->
         <nav class="hidden md:flex items-center gap-8 font-label-caps text-[11px] tracking-widest text-on-surface-variant font-medium">
-            <a href="{{ route('products') }}" class="hover:text-secondary transition-colors duration-300">Shop</a>
+            <a href="{{ route('products') }}" wire:navigate class="hover:text-secondary transition-colors duration-300">Shop</a>
             <a href="#about" class="hover:text-secondary transition-colors duration-300">About</a>
             <a href="#categories" class="hover:text-secondary transition-colors duration-300">Categories</a>
             <a href="#consultation" class="hover:text-secondary transition-colors duration-300">Consultation</a>
-            <a href="{{ route('blogs') }}" class="hover:text-secondary transition-colors duration-300">Blog</a>
+            <a href="{{ route('blogs') }}" wire:navigate class="hover:text-secondary transition-colors duration-300">Blog</a>
         </nav>
         
         <!-- Right: Actions (Search, Cart Drawer Trigger) -->

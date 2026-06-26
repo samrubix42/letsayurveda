@@ -5,7 +5,7 @@
             
             <!-- Column 1: Brand Info -->
             <div class="md:col-span-4 flex flex-col justify-start">
-                <a href="/" class="flex items-center gap-2 mb-4">
+                <a href="/" wire:navigate class="flex items-center gap-2 mb-4">
                     <img src="/logo.png" alt="LetsAyurveda Logo" class="h-8 w-auto object-contain">
                     <span class="font-display-lg text-xl tracking-tight text-primary font-bold">LetsAyurveda</span>
                 </a>

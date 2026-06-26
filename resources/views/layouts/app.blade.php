@@ -6,6 +6,9 @@
     <title>LetsAyurveda | Timeless Wellness</title>
     <meta content="Ancient Ayurvedic wisdom for modern lives. Premium skincare, haircare, and wellness." name="description"/>
     <meta name="robots" content="noindex, nofollow"/>
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Material Symbols -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     <!-- Fonts -->
@@ -54,11 +57,11 @@
                             </button>
                         </div>
                         <nav class="mt-8 flex flex-col gap-6 font-label-caps text-label-caps tracking-widest text-primary text-lg">
-                            <a @click="mobileMenuOpen = false" href="{{ route('products') }}" class="hover:text-secondary py-2 border-b border-outline-variant/10">Shop</a>
+                            <a @click="mobileMenuOpen = false" href="{{ route('products') }}" wire:navigate class="hover:text-secondary py-2 border-b border-outline-variant/10">Shop</a>
                             <a @click="mobileMenuOpen = false" href="#about" class="hover:text-secondary py-2 border-b border-outline-variant/10">About</a>
                             <a @click="mobileMenuOpen = false" href="#categories" class="hover:text-secondary py-2 border-b border-outline-variant/10">Categories</a>
                             <a @click="mobileMenuOpen = false" href="#consultation" class="hover:text-secondary py-2 border-b border-outline-variant/10">Consultation</a>
-                            <a @click="mobileMenuOpen = false" href="{{ route('blogs') }}" class="hover:text-secondary py-2">Blog</a>
+                            <a @click="mobileMenuOpen = false" href="{{ route('blogs') }}" wire:navigate class="hover:text-secondary py-2">Blog</a>
 
                             @auth
                                 <div class="mt-4 pt-4 border-t border-outline-variant/20 flex flex-col gap-4 font-body-md text-sm text-slate-700">
