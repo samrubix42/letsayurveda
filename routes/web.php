@@ -16,7 +16,7 @@ Route::livewire('/register', 'auth::user.register')->name('register');
 Route::livewire('/admin/login', 'auth::login')->name('admin.login');
 
 Route::middleware('auth')->group(function () {
-    Route::livewire('/dashboard', 'pages::user.dashboard')->name('dashboard');
+    Route::livewire('/profile', 'pages::user.dashboard')->name('dashboard');
 
     Route::post('/logout', function () {
         $isAdmin = Illuminate\Support\Facades\Auth::check() && Illuminate\Support\Facades\Auth::user()->is_admin;
